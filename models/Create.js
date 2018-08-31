@@ -1,0 +1,17 @@
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
+
+const CreateSchema = new Schema({
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'users'
+  },
+  apply: [{
+    name: {
+      type: String,
+      required: true
+    }
+  }]
+})
+
+module.exports = Create = mongoose.model('creates', CreateSchema)
